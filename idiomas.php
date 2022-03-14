@@ -33,7 +33,9 @@ try {
 
         if ($resultado) {
             $_SESSION['mensaje'] = "Datos insertados correctamente";
+            $script_alert = alert("Insertado", "datos insertados correctamente", "success");
         } else {
+            $script_alert = alert("Insertado", "datos insertados correctamente", "error");
             throw new Exception("no se pudo insertar los datos");
         }
     }

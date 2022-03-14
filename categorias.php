@@ -34,12 +34,14 @@ try {
 
         if ($resultado) {
             $_SESSION['mensaje'] = "Datos insertados correctamente";
+
+            $script_alert = alert("Insertado", "datos insertados correctamente", "success");
         } else {
+            $script_alert = alert("Error", "no se pudo insertar", "error");
             throw new Exception("no se pudo insertar los datos");
         }
     }
-    //refrezcar
-    refrezcar("categorias.php");
+    
 } catch (Throwable $ex) {
     $error = $ex->getMessage();
 }

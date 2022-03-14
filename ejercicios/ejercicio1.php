@@ -11,18 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
-<?php
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$databasename = "sakila";
 
-// Create connection
-$conexion= mysqli_connect($hostname, $username, $password, $databasename);
-
-or die ("no se pudo conectar a la base de datos:" . mysqli_connect_error())
-
-;
 
 <body>
 

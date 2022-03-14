@@ -15,8 +15,10 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
+                        <label for="">categoria</label>
                         <input type="text" name="name" class="form-control">
+<label for=""></label>
+                        <select name="store_id" id="">tienda_id</select>
 
                     </div>
 
@@ -28,6 +30,12 @@
 
             <?php if (!empty($error)) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?php echo $error; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+            <?php if (!empty($_SESSION["mensaje"])) : ?>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
                 <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -44,10 +52,6 @@
                         class="bi bi-search"></i>Buscar</button>
             </form>
 
-
-
-
-
         </div>
 
     </div>
@@ -58,7 +62,6 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">nombres</th>
-
                         <th scope="col">fecha de actualizacion</th>
                     </tr>
                 </thead>

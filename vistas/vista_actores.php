@@ -12,9 +12,11 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
+                        <label for="">nombre</label>
                         <input type="text" name="first_name" class="form-control">
-                        <input type="text" name="last_name" class="form-control">
+                        <label for="">apellido</label>
+                        <input type="text" name="last_name" id="" class="form-control">
+
 
                     </div>
 

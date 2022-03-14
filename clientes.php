@@ -20,18 +20,32 @@ try {
     if (isset($_POST["boton-guardar"])) {
         echo "guardando...";
         //variables
-        $name = $_POST[("store_id")];
+        $store_id = $_POST[("store_id")];
+        $address_id = $_POST[("address_id")];
 
         //validaciones
-        if (empty($name)) {
-            throw new Exception("el id no puede estar vacio");
+        if (empty($store_id)) {
+            throw new Exception("el tienda_id no puede estar vacio");
+            if (empty($address_id)) {
+                throw new Exception("la direccion_id no puede estar vacio");
+            }
         }
         //guadar
+        $query = "INSERT INTO customer (store_id, address_id) VALUES ('$store_id', '$address_id')";
+        $resultado = $conexion->query($query) or die("Error en query");
 
-        //refrezcar
+        if ($resultado) {
+            $_SESSION['mensaje'] = "Datos insertados correctamente";
 
-
+            $script_alert = alert("Insertado", "datos insertados correctamente", "success");
+        } else {
+            $script_alert = alert("Error", "no se pudo insertar", "error");
+            throw new Exception("no se pudo insertar los datos");
+        }
     }
+    //refrezcar
+
+
 } catch (Throwable $ex) {
     $error = $ex->getMessage();
 }

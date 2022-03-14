@@ -16,16 +16,34 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
+                        <label for="">ciudad</label>
                         <input type="text" name="city" class="form-control">
-
                     </div>
 
-                    <div class="mb-3">
+                    <label for="">pais</label>
+                    <select class="form-select" name="country_id">
+                        <option value="" selected>seleccione</option>
+
+                        <?php
+                        $query = "SELECT * FROM country";
+
+                        $resultado = mysqli_query($conexion, $query);
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->country_id'>$fila->country</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+
+
+                    <div class=" mb-3">
                         <button name="boton-guardar" class="btn btn-primary">guardar</button>
 
                     </div>
             </form>
+
+
 
             <?php if (!empty($error)) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -56,9 +74,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">city_id</th>
                         <th scope="col">ciudad</th>
-                        <th scope="col">ciudad_id</th>
+
                         <th scope="col">country_id</th>
                         <th scope="col">fecha de actualizacion</th>
                     </tr>
@@ -78,8 +96,8 @@
 
 <tr>    
 <td>${fila['city_id']}</td>
-<td>${fila['city']}</td>
-<td>${fila['city']}</td>
+
+<td>${fila['city']}                                                                                                                                  </td>
 <td>${fila['country_id']}</td>
 
 

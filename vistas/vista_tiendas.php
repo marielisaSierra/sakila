@@ -11,15 +11,42 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
-                        <input type="text" name="store_id" class="form-control">
+                        <label for="">manager</label>
+                        <select class="form-select" name="manager_staff_id">
+                            <option value="" selected>seleccione</option>
 
-                    </div>
 
-                    <div class="mb-3">
-                        <button name="boton-guardar" class="btn btn-primary">guardar</button>
 
-                    </div>
+                            <?php
+                            $query = "SELECT * FROM store";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->address_id'>$fila->manager_staff_id</option>";
+                                }
+                            }
+                            ?>
+                        </select> <label for="">direcion</label>
+                        <select class="form-select" name="address_id">
+                            <option value="" selected>seleccione</option>
+
+                            <?php
+                            $query = "SELECT * FROM store";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->address_id'>$fila->manager_staff_id</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+
+                        <div class="mb-3">
+                            <button name="boton-guardar" class="btn btn-primary">guardar</button>
+
+                        </div>
             </form>
 
             <?php if (!empty($error)) : ?>
@@ -35,9 +62,14 @@
     <div class="row">
         <div class="col-4">
             <form class="input-group mb-3">
-                <input type="text" name="buscador" class="form-control" placeholder="Buscador">
+                <input type="text" name="store1" class="form-control" placeholder="Buscador">
+
                 <button class="btn btn-outline-secondary" type="submit" name="boton_buscar" id="boton-buscar"><i
                         class="bi bi-search"></i>Buscar</button>
+
+
+
+
             </form>
 
 

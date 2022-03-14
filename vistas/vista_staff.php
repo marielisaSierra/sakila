@@ -11,8 +11,65 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
-                        <input type="text" name="email" class="form-control">
+
+                        <label for="">nombre</label>
+                        <input type="text" name="first_name" id="" class="form-control">
+                        <br>
+
+                        <label for="">apellido</label>
+                        <input type="text" name="last_name" id="" class="form-control">
+                        <br>
+
+
+                        </select> <label for="">direccion</label>
+                        <select class="form-select" name="address_id">
+                            <option value="" selected>seleccione</option>
+
+                            <?php
+                            $query = "SELECT * FROM address";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->address_id'>$fila->address</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <br>
+
+                        <label for="">correo</label>
+                        <input type="text" name="email" id="" class="form-control">
+                        <br>
+
+
+                        </select> <label for="">tienda</label>
+                        <select class="form-select" name="address_id">
+                            <option value="" selected>seleccione</option>
+
+                            <?php
+                            $query = "SELECT * FROM store";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->store_id'>$fila->manager_staff_id</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <br>
+
+
+                        <label for="">usuario</label>
+                        <input type="text" name="username" id="" class="form-control">
+                        <br>
+
+                        <label for="">contraseña</label>
+                        <input type="text" name="password" id="" class="form-control">
+                        <br>
+
+
 
                     </div>
 
@@ -38,8 +95,9 @@
                 <input type="text" name="buscador" class="form-control" placeholder="Buscador">
                 <button class="btn btn-outline-secondary" type="submit" name="boton_buscar" id="boton-buscar"><i
                         class="bi bi-search"></i>Buscar</button>
-            </form>
 
+
+            </form>
 
 
 
@@ -82,11 +140,12 @@
                         $resultado = mysqli_query($conexion, $query);
                         if ($resultado) {
                             while ($fila = mysqli_fetch_assoc($resultado)) {
-                                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
+                                $imagen  = '<img src="data:image/jpeg;base64,' . base64_encode($fila['picture']) . '"/>';
+
                                 echo "
 <tr>
-<td>${fila['adress_id']}</td>
-<td>${fila['picture']}</td>
+<td>${fila['address_id']}</td>
+<td>$imagen</td>
 <td>${fila['email']}</td>
 <td>${fila['store_id']}</td>
 <td>${fila['active']}</td>

@@ -16,41 +16,71 @@
 <body>
 
 
-    <ul class="nav">
-        <li class="nav-item">
-
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./actores.php">actores</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./categorias.php">categorias</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./ciudades.php">ciudades</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./clientes.php">clientes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./idiomas.php">idiomas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./paises.php">paises</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./peliculas.php">peliculas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./staff.php">staff</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./tiendas.php">tiendas</a>
-        </li>
-
-    </ul>
 
     <div class="col-lg-8 mx-auto p-3 py-md-5">
+
+        <div class="row text-center">
+            <div class="col-3">
+                <span class="fs-1"> <i class="bi bi-person-circle"></i></span>
+                <a href="./actores.php">
+                    <h3>Actores</h3>
+                </a>
+
+            </div>
+            <div class="col-3">
+                <span class="fs-1"> <i class="bi bi-bar-chart-steps"></i></span>
+                <a href="./categorias.php">
+                    <h3>Categorias</h3>
+                </a>
+            </div>
+            <div class="col-3">
+                <span class="fs-1"> <i class="bi bi-building"></i></span>
+                <a href="./ciudades.php">
+                    <h3>Ciudades</h3>
+                </a>
+
+            </div>
+            <div class="col-3">
+                <span class="fs-1"> <i class="bi bi-person-video2"></i></span>
+                <a href="./clientes.php">
+                    <h3>Clientes</h3>
+                </a>
+
+            </div>
+            <div class="col-3">
+                <span class="fs-1"><i class="bi bi-three-dots-vertical"></i></span>
+                <a href="./idiomas.php">
+                    <h3>Idiomas</h3>
+                </a>
+
+            </div>
+            <div class="col-3">
+                <span class="fs-1"><i class="bi bi-bank"></i></span>
+                <a href="./paises.php">
+                    <h3>Paises</h3>
+                </a>
+
+            </div>
+            <div class="col-3">
+                <span class="fs-1"><i class="bi bi-boombox-fill"></i></span>
+                <a href="./peliculas.php">
+                    <h3>Peliculas</h3>
+                </a>
+            </div>
+            <div class="col-3">
+                <span class="fs-1"><i class="bi bi-clipboard2-pulse-fill"></i></span>
+                <a href="./staff.php">
+                    <h3>Staff</h3>
+                </a>
+            </div>
+            <div class="col-3">
+                <span class="fs-1"><i class="bi bi-eyeglasses"></i></span>
+                <a href="./tiendas.php">
+                    <h3>Tienda</h3>
+                </a>
+            </div>
+        </div>
+
         <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94"

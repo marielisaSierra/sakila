@@ -21,8 +21,8 @@ try {
         echo "guardando...";
 
         //variables
-        $first_name;
-        $last_name = $_POST["name"];
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
 
         //validaciones
         if (empty($first_name)) {
@@ -40,7 +40,9 @@ try {
 
         if ($resultado) {
             $_SESSION['mensaje'] = "Datos insertados correctamente";
+            $script_alert = alert("Insertado", "datos insertados correctamente", "success");
         } else {
+            $script_alert = alert("Insertado", "datos insertados correctamente", "error");
             throw new Exception("no se pudo insertar los datos");
         }
     }

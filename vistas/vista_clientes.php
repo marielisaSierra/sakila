@@ -15,8 +15,38 @@
             <form method="post">
                 <div class="col-6">
                     <div class="mb3">
-                        <label for="">sakila</label>
-                        <input type="text" name="store_id" class="form-control">
+                        <label for="">tienda_id</label>
+                        <select class="form-select" name="address_id">
+                            <option value="" selected>seleccione</option>
+
+                            <?php
+                            $query = "SELECT * FROM customer";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->customer'>$fila->store_id</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+
+                        <label for="">direccion_id</label>
+                        <select class="form-select" name="address_id">
+                            <option value="" selected>seleccione</option>
+
+                            <?php
+                            $query = "SELECT * FROM address";
+
+                            $resultado = mysqli_query($conexion, $query);
+                            if ($resultado) {
+                                while ($fila = mysqli_fetch_object($resultado)) {
+                                    echo "<option value='$fila->address'>$fila->address_id</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+
 
                     </div>
 
