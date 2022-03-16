@@ -35,13 +35,48 @@ try {
         if ($resultado) {
             $_SESSION['mensaje'] = "Datos insertados correctamente";
 
-            $script_alert = alert("Insertado", "datos insertados correctamente", "success");
+            $script_alert = alert("procesado", "datos procesados correctamente", "success");
         } else {
             $script_alert = alert("Error", "no se pudo insertar", "error");
-            throw new Exception("no se pudo insertar los datos");
+            throw new Exception("no se pudo procesar los datos");
         }
     }
-    
+
+    //actualizar
+    $id = $_POST['id'] ?? '';
+
+    if (!empty($id)) {
+        $query = "UPDATE category SET name = '$name' WHERE  category_id = '$id' ";
+    }
+
+    if (isset(($_GET['editar']))) {
+
+
+        $category_id = $_GET['editar'];
+        $query = "SELECT * FROM category WHERE category_id = 'category_id' ";
+
+        $resultado = mysqli_query($conexion, $query);
+        if ($resultado) {
+            while ($fila = mysqli_fetch_object($resultado)) {
+                $category_id = $fila->category_id;
+                $name = $fila->name;
+            }
+        }
+    }
+    if (isset(($_GET['eliminar']))) {
+        $category_id = $_GET['eliminar'];
+        
+        $query = "DELETE FROM category WHERE 'categoty_id'";
+        $resultado = $conexion->query($query) or die("Error en query");
+        if ($resultado) {
+            
+            $script_alerta = alerta("Elimidado", "datos imsertados", "success");
+        } else {
+            $script_alert = alerta("Error", "No se pudo eliminar", "error");
+
+            throw new Exception("no se pudo eliminar los datos");
+        }
+    }
 } catch (Throwable $ex) {
     $error = $ex->getMessage();
 }

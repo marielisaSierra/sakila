@@ -13,11 +13,12 @@
 
         <div class="row">
             <form method="post">
+                <input value="<?php echo $name ?? ''; ?>" type="text" name="" id="">
                 <div class="col-6">
                     <div class="mb3">
                         <label for="">categoria</label>
-                        <input type="text" name="name" class="form-control">
-<label for=""></label>
+                        <input value="<?php echo $name ?? ''; ?>" type=" text" name="name" class="form-control">
+                        <label for=""></label>
                         <select name="store_id" id="">tienda_id</select>
 
                     </div>
@@ -29,7 +30,7 @@
             </form>
 
             <?php if (!empty($error)) : ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div class=" alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -84,8 +85,15 @@
 
 
                                 <td>${fila['last_update']}</td>
-                                </tr>
-                                ";
+
+                                <td>
+                                
+                                <a href='{$_SERVER['PHP_SELF']}?editar={$fila['category_id']}'>editar</a>
+                    <a href='{$_SERVER['PHP_SELF']}?eliminar={$fila['category_id']}'>eliminar</a>
+
+                    </td>
+                    </tr>
+                    ";
                         }
                     }
 
